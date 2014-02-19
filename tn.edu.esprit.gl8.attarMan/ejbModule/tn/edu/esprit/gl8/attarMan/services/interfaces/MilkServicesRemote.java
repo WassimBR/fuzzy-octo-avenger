@@ -13,4 +13,8 @@ public interface MilkServicesRemote {
 
 	boolean addMilk(Milk milk);
 
+	Milk findMilkById(int id);
+
+	boolean deleteMilk(Milk milk);
+
 }

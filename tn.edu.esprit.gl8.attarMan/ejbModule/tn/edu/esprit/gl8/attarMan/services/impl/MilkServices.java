@@ -45,4 +45,23 @@ public class MilkServices implements MilkServicesRemote {
 		return b;
 	}
 
+	@Override
+	public Milk findMilkById(int id) {
+
+		return entityManager.find(Milk.class, id);
+	}
+
+	@Override
+	public boolean deleteMilk(Milk milk) {
+		boolean b = false;
+		try {
+			entityManager.remove(entityManager.merge(milk));
+			b = true;
+
+		} catch (Exception e) {
+			System.err.println("i can't do it sorry mama ...");
+		}
+		return b;
+	}
+
 }

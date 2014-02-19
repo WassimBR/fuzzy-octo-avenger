@@ -39,6 +39,7 @@ public class TestRealPlatform {
 	}
 
 	@Test
+	@Ignore
 	public void itShouldAddMilk() {
 		Milk milk = new Milk();
 		milk.setBrand("nido");
@@ -47,4 +48,29 @@ public class TestRealPlatform {
 
 	}
 
+	@Test
+	@Ignore
+	public void itShouldFindMilkById() {
+		Milk milk = proxy.findMilkById(1);
+		Assert.assertEquals("nido", milk.getBrand());
+	}
+
+	@Test
+	public void itShouldDeleteFoundMilk() {
+		Assert.assertTrue(proxy.deleteMilk(proxy.findMilkById(1)));
+
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
